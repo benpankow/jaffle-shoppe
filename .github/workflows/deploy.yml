@@ -46,7 +46,7 @@ jobs:
         run: |
           pip install pip --upgrade
           cd ${{ env.DBT_PROJECT_DIR }}/${{ env.DAGSTER_PROJECT_NAME }}
-          pip install . MarkupSafe==2.0.1 'click>8.1'
+          pip install . MarkupSafe==2.0.1 'click>8.1' 'Jinja2>3.0.0'
           pip install pyOpenSSL --upgrade
           cd -
           rsync -avz --exclude ${{ env.DAGSTER_PROJECT_NAME }} --exclude .git ${{ env.DBT_PROJECT_DIR }}/ ${{ env.DBT_PACKAGE_DATA_DIR }}
